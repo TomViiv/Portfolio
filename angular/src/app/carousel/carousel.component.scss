@@ -38,3 +38,13 @@
 .caption{
   color: black;
 }
+
+.solo-img{
+  max-width: 500px;
+}
+
+@media (orientation: portrait){
+  .solo-img{
+    max-width: 200px;
+  }
+}

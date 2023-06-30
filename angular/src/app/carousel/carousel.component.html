@@ -1,16 +1,20 @@
-<div class="carousel-container">
-  <ngb-carousel
-    #carousel
-    [interval]="5000"
-    [pauseOnHover]="pauseOnHover"
-    [pauseOnFocus]="pauseOnFocus"
-    (slide)="onSlide($event)"
-  >
-    <ng-template ngbSlide *ngFor="let img of images; index as i">
-      <div class="carousel-caption">
-        <h3 class="caption">{{ img.name }}</h3>
-      </div>
-      <a href="#">
+<ng-container *ngIf="images.length == 1; else moreThanOne">
+  <img class="solo-img" [src]="images[0].url" [alt]="'description'" />
+</ng-container>
+
+<ng-template #moreThanOne>
+  <div class="carousel-container">
+    <ngb-carousel
+      #carousel
+      [interval]="5000"
+      [pauseOnHover]="pauseOnHover"
+      [pauseOnFocus]="pauseOnFocus"
+      (slide)="onSlide($event)"
+    >
+      <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <div class="carousel-caption">
+          <h3 class="caption">{{ img.name }}</h3>
+        </div>
         <div class="picsum-img-wrapper img-container">
           <ng-container *ngIf="img.type == 'video'">
             <video class="carousel-img" [src]="img.url" autoplay></video>
@@ -19,7 +23,7 @@
             <img class="carousel-img" [src]="img.url" [alt]="'description'" />
           </ng-container>
         </div>
-      </a>
-    </ng-template>
-  </ngb-carousel>
-</div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</ng-template>

@@ -243,3 +243,23 @@ header{
   align-items: center;
   text-align: justify;
 }
+
+.return-home{
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  color: app.$white;
+  height: 50px;
+  width: 50px;
+  z-index: 100;
+  border-radius: 100%;
+  padding: 5px;
+  background-color: app.$primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.return-home:hover{
+  background-color: app.$primary-color-hover;
+}

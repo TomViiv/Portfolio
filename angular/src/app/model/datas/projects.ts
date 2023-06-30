@@ -4,7 +4,7 @@ export const myProjects: Project[] = [
   new Project(
     'Portfolio',
     'Juin 2023',
-    "J'ai développé ce portfolio avec le framework Angular. J'aimerai implémenter mon \"Bureau de rêve\" en 3D à l'aide de la librairie ThreeJS. Cela me permettrai de mettre à profit les compétences que j'ai développé grâce à un MOOC Blender que j'ai effectué en mars 2023.",
+    "J'ai développé ce portfolio avec le framework Angular. J'aimerai implémenter mon \"Bureau de rêve\" en 3D à l'aide de la librairie ThreeJS. Cela me permettrai de mettre à profit les compétences développées grâce à un MOOC Blender effectué en mars 2023.",
     [
       { name: 'Blender', logoUrl: '' },
       { name: 'ThreeJS', logoUrl: '' },
@@ -13,7 +13,7 @@ export const myProjects: Project[] = [
       {type: "img", name:"Bureau de rêve", url: "/assets/Projects/bureau.png"}
     ]
   ),
-  new Project('KUHN AURA Live', "2021 - Aujourd'hui", "Actuellement je suis en alternance en tant qu'ingénieur Full-Stack au sein de l'équipe robotique de l'entreprise KUHN Audureau. Je suis en charge de la réalisation de l'application KUHN AURA Live. Je réalise les maquettes de vues et je les implémente. Je m'occupe aussi de la partie BackEnd. Il s'agit d'une application angular destinée à être l'Interface Homme Machine principale de l'innovant robot KUHN AURA.",
+  new Project('KUHN AURA Live', "2021 - Aujourd'hui", "Actuellement, je suis en alternance en tant qu'ingénieur Full-Stack au sein de l'équipe robotique de l'entreprise KUHN Audureau. J'ai en charge de la réalisation de l'application KUHN AURA Live. Je réalise les maquettes de vues et je les implémente. Je m'occupe aussi de la partie BackEnd. KUHN AURA Live est une application Angular destinée à être l'Interface Homme Machine principale de l'innovant robot KUHN AURA.",
     [
       { name: 'FrontEnd : Angular', logoUrl: '' },
       { name: 'BackEnd : .NET', logoUrl: '' },
@@ -38,7 +38,7 @@ export const myProjects: Project[] = [
   ),
   new Project(
     'Concept Jeu Recyclage "Loop"',
-    'novembre 2022',
+    'Novembre 2022',
     "Dans le cadre d'un Hackathon organisé à l'école, nous avions 2 jours pour imaginer un jeu pour sensibiliser à une thématique autour du développement durable. Avec mon équipe nous avons choisi de faire un jeu autour du recyclage des équipements numériques.",
     [],
     [
@@ -55,7 +55,7 @@ export const myProjects: Project[] = [
   ),
   new Project(
     'Bot Discord Marvel Snap',
-    'août 2022',
+    'Août 2022',
     "Je suis un grand fan de l'univers Marvel et joueur de Marvel Snap, un jeu de cartes mobile. Etant présent sur un discord communautaire, j'ai réalisé un bot permettant aux joueurs novices de demander des informations sur des cartes, sur le système de rareté des cartes, et plus encore...",
     [
       { name: 'Discord', logoUrl: '' },
