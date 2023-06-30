@@ -2,9 +2,8 @@
 
 .carousel-container{
   height: 100%;
-  width: 100%;
+  max-width: 500px;
   background-color: app.$secondary-color;
-  position: relative;
   border-radius: 10px;
 }
 
@@ -12,10 +11,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+@media (orientation: portrait) {
+  .img-container{
+    max-width: 200px;
+    max-height: 200px;
+  }
 }
 
 .carousel-img{
-  max-width: 900px;
+  max-width: 500px;
   max-height: 500px;
 }
 

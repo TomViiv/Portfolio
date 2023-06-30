@@ -7,16 +7,20 @@
           <h2>Ingénieur Full-Stack</h2>
         </div>
         <div class="first-line-container">
-          <div class="category-btn" id="projects-btn">
+          <div
+            class="category-btn"
+            id="projects-btn"
+            (click)="goTo('projects')"
+          >
             <fa-icon [icon]="faDiagramProject" [size]="'2x'"></fa-icon>Mes
             projets
           </div>
-          <div class="category-btn" id="hobbies-btn">
+          <div class="category-btn" id="hobbies-btn" (click)="goTo('hobbies')">
             <fa-icon [icon]="faPalette" [size]="'2x'"></fa-icon>Mes loisirs
           </div>
         </div>
         <div class="second-line-container">
-          <div class="category-btn" id="contact-btn">
+          <div class="category-btn" id="contact-btn" (click)="goTo('contact')">
             <fa-icon [icon]="faEnvelope" [size]="'2x'"></fa-icon>Contactez-moi
           </div>
         </div>
@@ -48,27 +52,31 @@
     </div>
   </header>
   <main>
-    <div class="projects-container">
+    <div class="projects-container" id="projects">
       <h3>Projets</h3>
       <ng-container *ngFor="let project of projects; let i = index">
         <div>
           <timeline-item [date]="project.date">
             <div>
               <h4>{{ project.name }}</h4>
-              <span class="project-description">{{ project.description }}</span>
+              <div class="project-description">{{ project.description }}</div>
               <ng-container *ngIf="project.technos.length > 0">
                 <div class="technos-container">
-                  <span></span>
-                  <ng-container *ngFor="let techno of project.technos">
-                    <div class="techno-logo-container">
-                      <img [src]="techno.logoUrl" />
-                    </div>
-                    <span class="techno-name">{{ techno.name }}</span>
-                  </ng-container>
+                  <span class="font-size-14">Technologies utilisées :</span>
+                  <ul>
+                    <ng-container *ngFor="let techno of project.technos">
+                      <li>
+                        <!--<div class="techno-logo-container">
+                          <img [src]="techno.logoUrl" />
+                        </div>-->
+                        <span class="techno-name">{{ techno.name }}</span>
+                      </li>
+                    </ng-container>
+                  </ul>
                 </div>
               </ng-container>
             </div>
-            <div class="carousel-container">
+            <div class="carousel-box">
               <app-carousel [images]="project.images"></app-carousel>
             </div>
           </timeline-item>
@@ -76,21 +84,46 @@
       </ng-container>
     </div>
     <div class="content-centered">
-      <div class="orange-line"></div>
+      <div class="orange-line-container">
+        <div class="orange-line"></div>
+      </div>
     </div>
-    <div class="hobbies-container">
-      <div class="hobbies-container">
-        <h3>Mes loisirs</h3>
+    <div class="hobbies-container" id="hobbies">
+      <h3>Mes loisirs</h3>
+      <div class="hobbies-table">
+        <ng-container *ngFor="let hobby of hobbies">
+          <div class="hobby-card-container">
+            <div
+              class="hobby-card"
+              [ngStyle]="{ 'background-image': 'url(' + hobby.imgUrl + ')' }"
+            >
+              <div class="hobby-content">
+                <div class="hobby-title">
+                  <div class="hobby-icon">
+                    <fa-icon [icon]="hobby.faIcon" [size]="'2x'"></fa-icon>
+                  </div>
+                  <div class="hobby-name">{{ hobby.name }}</div>
+                </div>
+                <div class="hobby-description">{{ hobby.description }}</div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
       </div>
     </div>
     <div class="content-centered">
-      <div class="orange-line"></div>
+      <div class="orange-line-container">
+        <div class="orange-line"></div>
+      </div>
     </div>
     <div class="contact-container" id="contact">
       <h3>Contactez-moi</h3>
-      <div>
-        <div>
-          <span>thomas.vivier99@gmail.com</span>
+      <div class="mail-container">
+        <div class="mail" (click)="copyMail()">
+          <a class="btn primary-btn" role="button" aria-pressed="true">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+            <p>thomas.vivier99@gmail.com</p></a
+          >
         </div>
       </div>
     </div>

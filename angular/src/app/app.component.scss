@@ -13,6 +13,12 @@
   padding: 20px;
 }
 
+@media (orientation: portrait){
+  .full-page{
+    padding: 10px;
+  }
+}
+
 header{
   width: 100%;
 }
@@ -138,14 +144,102 @@ header{
 
 .project-description{
   font-size: 16px;
+  text-align: justify;
+  color: app.$secondary-color;
+  padding-bottom: 10px;
+}
+
+.font-size-14{
+  font-size: 14px;
 }
 
 .techno-name{
   font-size: 16px;
 }
 
-.carousel-container{
-  max-height: 500px;
+.carousel-box{
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
+.mail-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mail{
+  cursor: pointer;
+}
+
+.hobbies-table{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.hobby-card-container{
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+}
+
+.hobby-card{
+  height: 150px;
+  width: 100%;
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgba(0,0,0,0);
+  padding: 10px;
+  transform: scale(0.8);
+}
+
+
+
+.hobby-card:hover{
+  transform: scale(1);
+  opacity: 1;
+  color: app.$white;
+}
+
+.hobby-content{
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+
+.hobby-content:hover{
+  opacity: 1;
+}
+
+.hobby-title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby-name{
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby-description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}

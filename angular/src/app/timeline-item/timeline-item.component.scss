@@ -19,13 +19,24 @@ $bottom-space: 25px;
   display: flex;
   align-items: start;
   justify-content: end;
-  width: 100px;
+}
+
+@media (orientation: portrait){
+    .date{
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
 }
 
 .date{
   text-align: end;
   color: app.$secondary-color;
-  width: 100px;
+}
+
+@media (orientation: landscape) {
+    .date{
+        width: 100px;
+    }
 }
 
 .timeline-item-graph {

@@ -5,6 +5,7 @@ import { NgFor, ViewportScroller } from '@angular/common';
 import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { faDiagramProject, faEnvelope, faHouse, faPalette } from '@fortawesome/free-solid-svg-icons';
+import { hobbies } from './model/datas/hobbies';
 
 @Component({
   selector: 'app-root',
@@ -24,12 +25,14 @@ export class AppComponent {
   faEnvelope = faEnvelope;
   faPalette = faPalette;
 
+  hobbies = hobbies;
+
   constructor(private scroller: ViewportScroller){
 
   }
 
-  goToContact() : void {
-    this.scroller.scrollToAnchor("contact");
+  goTo(id: string) : void {
+    this.scroller.scrollToAnchor(id);
   }
 
   getResumeUrl() : string {
@@ -45,6 +48,15 @@ export class AppComponent {
       return 'Vivier_Thomas_CV.pdf'
     } else {
       return ''; //TODO version anglaise du CV
+    }
+  }
+
+  copyMail() : void {
+    try {
+      navigator.clipboard.writeText("thomas.vivier99@gmail.com");
+      confirm("Adresse mail copiée :)");
+    } catch (err) {
+      console.error(err.name, err.message);
     }
   }
 

@@ -26,6 +26,7 @@ h3{
   justify-content: center;
   color: $secondary-color;
   padding-bottom: 25px;
+  text-transform: uppercase;
 }
 
 h4{
@@ -52,4 +53,10 @@ span{
 .primary-btn:hover{
   background-color: $primary-color-hover;
   color: $white;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
 }

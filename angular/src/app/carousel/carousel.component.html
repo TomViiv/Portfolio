@@ -1,29 +1,25 @@
 <div class="carousel-container">
-  <div class="box">
-    <ngb-carousel
-      #carousel
-      [interval]="5000"
-      [pauseOnHover]="pauseOnHover"
-      [pauseOnFocus]="pauseOnFocus"
-      (slide)="onSlide($event)"
-    >
-      <ng-template ngbSlide *ngFor="let img of images; index as i">
-        <div class="carousel-caption">
-          <h3 class="caption">{{ img.name }}</h3>
+  <ngb-carousel
+    #carousel
+    [interval]="5000"
+    [pauseOnHover]="pauseOnHover"
+    [pauseOnFocus]="pauseOnFocus"
+    (slide)="onSlide($event)"
+  >
+    <ng-template ngbSlide *ngFor="let img of images; index as i">
+      <div class="carousel-caption">
+        <h3 class="caption">{{ img.name }}</h3>
+      </div>
+      <a href="#">
+        <div class="picsum-img-wrapper img-container">
+          <ng-container *ngIf="img.type == 'video'">
+            <video class="carousel-img" [src]="img.url" autoplay></video>
+          </ng-container>
+          <ng-container *ngIf="img.type == 'img'">
+            <img class="carousel-img" [src]="img.url" [alt]="'description'" />
+          </ng-container>
         </div>
-        <a
-          href="#"
-        >
-          <div class="picsum-img-wrapper img-container">
-            <ng-container *ngIf="img.type == 'video'">
-              <video class="carousel-img" [src]="img.url" autoplay></video>
-            </ng-container>
-            <ng-container *ngIf="img.type == 'img'">
-              <img class="carousel-img" [src]="img.url" [alt]="'description'" />
-            </ng-container>
-          </div>
-        </a>
-      </ng-template>
-    </ngb-carousel>
-  </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
 </div>

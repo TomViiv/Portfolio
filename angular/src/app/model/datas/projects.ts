@@ -2,23 +2,56 @@ import { Project } from '../class/project';
 
 export const myProjects: Project[] = [
   new Project(
-    'Bureau de rêve en 3D',
-    'en cours de travail...',
-    "En mars 2023, j'ai effectué un MOOC pour apprendre les bases de Blender. J'ai mis à profit ces nouvelles compétences en créant mon bureau de rêve en 3D. Mon objectif est maintenant d'intégrer ce bureau dans mon portfolio. Pour cela, j'ai commencé à m'interresser à la librarie ThreeJS et à son implémentation avec Angular. Ce projet est actuellement en cours de développement.",
+    'Portfolio',
+    'Juin 2023',
+    "J'ai développé ce portfolio avec le framework Angular. J'aimerai implémenter mon \"Bureau de rêve\" en 3D à l'aide de la librairie ThreeJS. Cela me permettrai de mettre à profit les compétences que j'ai développé grâce à un MOOC Blender que j'ai effectué en mars 2023.",
     [
       { name: 'Blender', logoUrl: '' },
       { name: 'ThreeJS', logoUrl: '' },
+    ],
+    [
+      {type: "img", name:"Bureau de rêve", url: "/assets/Projects/bureau.png"}
     ]
   ),
-  new Project('AURA Live', '2021-2024', 'description', [
-    { name: 'FrontEnd : Angular', logoUrl: '' },
-    { name: 'BackEnd : .NET', logoUrl: '' },
-  ]),
+  new Project('KUHN AURA Live', "2021 - Aujourd'hui", "Actuellement je suis en alternance en tant qu'ingénieur Full-Stack au sein de l'équipe robotique de l'entreprise KUHN Audureau. Je suis en charge de la réalisation de l'application KUHN AURA Live. Je réalise les maquettes de vues et je les implémente. Je m'occupe aussi de la partie BackEnd. Il s'agit d'une application angular destinée à être l'Interface Homme Machine principale de l'innovant robot KUHN AURA.",
+    [
+      { name: 'FrontEnd : Angular', logoUrl: '' },
+      { name: 'BackEnd : .NET', logoUrl: '' },
+    ],
+    [
+      {
+        type: 'img', name:'Menu principal - Aperçu', url: '/assets/Projects/AURA_Live/apercu.png'
+      },
+      {
+        type: 'img', name:'Missions réalisées', url: '/assets/Projects/AURA_Live/past-missions.jpg'
+      },
+      {
+        type: 'img', name:'Missions planifiées', url: '/assets/Projects/AURA_Live/scheduled-missions.jpg'
+      },
+      {
+        type: 'img', name:'Mission en cours', url: '/assets/Projects/AURA_Live/pesee_mission_running.png'
+      },
+      {
+        type: 'img', name:'Rations', url: '/assets/Projects/AURA_Live/rations.jpg'
+      },
+    ]
+  ),
   new Project(
-    'Concept Jeu Recyclage',
+    'Concept Jeu Recyclage "Loop"',
     'novembre 2022',
     "Dans le cadre d'un Hackathon organisé à l'école, nous avions 2 jours pour imaginer un jeu pour sensibiliser à une thématique autour du développement durable. Avec mon équipe nous avons choisi de faire un jeu autour du recyclage des équipements numériques.",
-    []
+    [],
+    [
+      {
+        type: 'img', name:'Etude recyclage en Mayenne', url: '/assets/Projects/RSE/6_carte_mayenne_recyclage_a3.png'
+      },
+      {
+        type: 'img', name:'Jeu "Loop"', url: '/assets/Projects/RSE/6_jeu_loop.png'
+      },
+      {
+        type: 'img', name:'Maquette "Loop"', url: '/assets/Projects/RSE/jeu RSE.png'
+      },
+    ]
   ),
   new Project(
     'Bot Discord Marvel Snap',
@@ -28,7 +61,15 @@ export const myProjects: Project[] = [
       { name: 'Discord', logoUrl: '' },
       { name: 'BackEnd : node.js', logoUrl: '' },
       { name: 'Base de Données : PostgreSQL', logoUrl: '' },
-      { name: 'docker', logoUrl: '' },
+      { name: 'Docker', logoUrl: '' },
+    ],
+    [
+      {
+        type: 'img', name:'Commande !!card', url: '/assets/Projects/DiscordBot/card.png'
+      },
+      {
+        type: 'img', name:'Commande !!rarity', url: '/assets/Projects/DiscordBot/rarity.png'
+      },
     ]
   ),
   new Project(
@@ -43,22 +84,27 @@ export const myProjects: Project[] = [
       {
         type: 'img',
         name: 'Face avant',
-        url: '/assets/Projects/Arduino/secure-lock-face.jpg',
+        url: '/assets/Projects/Arduino/digital-lock-face.jpg',
       },
       {
         type: 'img',
         name: 'Intérieur - Arduino',
-        url: '/assets/Projects/Arduino/secure-lock-inside.jpg',
+        url: '/assets/Projects/Arduino/digital-lock-inside.jpg',
       },
       {
         type: 'img',
         name: 'Intérieur - Batterie',
-        url: '/assets/Projects/Arduino/secure-lock-battery.jpg',
+        url: '/assets/Projects/Arduino/digital-lock-battery.jpg',
       },
       {
         type: 'video',
         name: 'Premiers tests',
-        url: '/assets/Projects/Arduino/secure-lock-test.mp4',
+        url: '/assets/Projects/Arduino/digital-lock-test.mp4',
+      },
+      {
+        type: 'video',
+        name: 'Rendu final',
+        url: '/assets/Projects/Arduino/digital-lock.mp4',
       },
     ]
   ),
