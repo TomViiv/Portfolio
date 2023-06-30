@@ -1,3 +1,5 @@
 **/dist
-**/nodes_modules
+**/node_modules
 **/.angular
+**/client
+package-lock.json
