@@ -1,0 +1,7 @@
+[build]
+  command = "npm run prerender"
+  functions = "./functions"
+  publish = "dist/portfolio/browser"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
