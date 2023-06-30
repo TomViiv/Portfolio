@@ -1,0 +1,99 @@
+<div class="full-page">
+  <header>
+    <div class="visit-card">
+      <div class="left-side-visit-card">
+        <div class="title-container">
+          <h1>THOMAS VIVIER</h1>
+          <h2>Ingénieur Full-Stack</h2>
+        </div>
+        <div class="first-line-container">
+          <div class="category-btn" id="projects-btn">
+            <fa-icon [icon]="faDiagramProject" [size]="'2x'"></fa-icon>Mes
+            projets
+          </div>
+          <div class="category-btn" id="hobbies-btn">
+            <fa-icon [icon]="faPalette" [size]="'2x'"></fa-icon>Mes loisirs
+          </div>
+        </div>
+        <div class="second-line-container">
+          <div class="category-btn" id="contact-btn">
+            <fa-icon [icon]="faEnvelope" [size]="'2x'"></fa-icon>Contactez-moi
+          </div>
+        </div>
+      </div>
+      <div class="right-side-visit-card">
+        <div></div>
+        <div class="frame-container">
+          <div class="profile-img-container">
+            <img class="profile-img" src="/assets/portrait.png" />
+          </div>
+        </div>
+        <div></div>
+        <div class="download-btn-container">
+          <a
+            [href]="getResumeUrl()"
+            [download]="getResumeFilename()"
+            class="btn primary-btn"
+            role="button"
+            aria-pressed="true"
+            >Télécharger mon CV</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="content-centered">
+      <div class="orange-line-container">
+        <div class="orange-line"></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="projects-container">
+      <h3>Projets</h3>
+      <ng-container *ngFor="let project of projects; let i = index">
+        <div>
+          <timeline-item [date]="project.date">
+            <div>
+              <h4>{{ project.name }}</h4>
+              <span class="project-description">{{ project.description }}</span>
+              <ng-container *ngIf="project.technos.length > 0">
+                <div class="technos-container">
+                  <span></span>
+                  <ng-container *ngFor="let techno of project.technos">
+                    <div class="techno-logo-container">
+                      <img [src]="techno.logoUrl" />
+                    </div>
+                    <span class="techno-name">{{ techno.name }}</span>
+                  </ng-container>
+                </div>
+              </ng-container>
+            </div>
+            <div class="carousel-container">
+              <app-carousel [images]="project.images"></app-carousel>
+            </div>
+          </timeline-item>
+        </div>
+      </ng-container>
+    </div>
+    <div class="content-centered">
+      <div class="orange-line"></div>
+    </div>
+    <div class="hobbies-container">
+      <div class="hobbies-container">
+        <h3>Mes loisirs</h3>
+      </div>
+    </div>
+    <div class="content-centered">
+      <div class="orange-line"></div>
+    </div>
+    <div class="contact-container" id="contact">
+      <h3>Contactez-moi</h3>
+      <div>
+        <div>
+          <span>thomas.vivier99@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</div>

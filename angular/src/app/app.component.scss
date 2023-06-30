@@ -1,0 +1,151 @@
+@use '/src/styles.scss' as app;
+
+.custom-navbar{
+  padding: 20px 20px;
+}
+
+.bg{
+  background-color: app.$light-grey;
+}
+
+.full-page{
+  width: 100%;
+  padding: 20px;
+}
+
+header{
+  width: 100%;
+}
+
+.visit-card{
+  height: 400px;
+  width: 100%;
+  display: flex;
+}
+
+.left-side-visit-card{
+  height: 100%;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 25% 25%;
+}
+
+.right-side-visit-card{
+  width: 30%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 60% 10% 20%;
+}
+
+.title-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+.first-line-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.second-line-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-btn{
+  height: 100%;
+  //width: 50px;
+  aspect-ratio: 1/1;
+  background-color: app.$primary-color;
+  color: app.$white;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.category-btn:hover{
+  background-color: app.$primary-color-hover;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.frame-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img-container{
+  height: 100%;
+  aspect-ratio: 1/1;
+  border: 5px solid app.$primary-color;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-img-container{
+    height: auto;
+    width: 100%;
+  }
+}
+
+.profile-img{
+  max-height: 100%;
+  max-width: 100%;
+  clip-path:ellipse(50% 50%);
+}
+
+.download-btn-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orange-line-container{
+  padding: 20px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orange-line{
+  background-color: app.$primary-color;
+  height: 5px;
+  width: 90%;
+  border-radius: 20px;
+}
+
+.project-description{
+  font-size: 16px;
+}
+
+.techno-name{
+  font-size: 16px;
+}
+
+.carousel-container{
+  max-height: 500px;
+  width: 100%;
+}
+

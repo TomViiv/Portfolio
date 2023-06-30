@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+$primary-color: #FF8872;
+$primary-color-hover: #E57B67;
+$secondary-color: #2D4767;
+$light-grey: #F4F3F3;
+$white: #FFFFFF;
+
+h1{
+  //font-family: 'Arvo';
+  color: $primary-color;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+h2{
+  color: $secondary-color;
+}
+
+h3{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: $secondary-color;
+  padding-bottom: 25px;
+}
+
+h4{
+  font-size: 40px;
+  color: $secondary-color;
+}
+
+.content-centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+span{
+  color: $secondary-color;
+}
+
+.primary-btn{
+  color: $white;
+  background-color: $primary-color;
+}
+
+.primary-btn:hover{
+  background-color: $primary-color-hover;
+  color: $white;
+}
