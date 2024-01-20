@@ -1,11 +1,17 @@
 @use '/src/styles.scss' as app;
 
+$logo-size: 24px;
+$contact-list-width: 100px;
+$orange-line-height: 2px;
+$orange-line-margin: 50px;
+$main-margin-top: 50px;
+
 .custom-navbar{
   padding: 20px 20px;
 }
 
 .bg{
-  background-color: app.$light-grey;
+  background-color: app.$lightgrey;
 }
 
 .full-page{
@@ -20,49 +26,109 @@
 }
 
 header{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: app.$header-height;
+  z-index: 3;
+  background-color: app.$white;
 }
 
-.visit-card{
-  height: 400px;
+.orange-line{
+  background-color: app.$primary-color;
+  height: $orange-line-height;
+  width: calc(100% - 2*$orange-line-margin);
+  border-radius: 20px;
+}
+
+main {
+  margin-top: $main-margin-top;
+  height: calc(100vh - app.$header-height);
   width: 100%;
+  padding: 0 10% 0 10%;
+  display: inline-block;
+}
+
+.site-header{
+  height: calc(100% - $orange-line-height);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 50px 1px 50px;
+}
+
+.header-left-side {
+  width: calc(100% - $contact-list-width);
   display: flex;
 }
 
-.left-side-visit-card{
-  height: 100%;
-  width: 70%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50% 25% 25%;
-}
-
-.right-side-visit-card{
-  width: 30%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 10% 60% 10% 20%;
-}
-
 .title-container{
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  .main-logo{
+    border-radius: 50%;
+    max-height: $logo-size;
+    max-width: $logo-size;
+    vertical-align: center;
+  }
 }
 
-.first-line-container{
+nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
 }
 
-.second-line-container{
+nav .separator{
+  height: 50%;
+  width: 1px;
+  border-radius: 10px;
+  background-color: app.$secondary-color;
+}
+
+nav .nav-item {
+  color: app.$secondary-color;
+  font-family: app.$primary-font;
+  padding: 0 10px;
+  min-width: 30px;
+}
+
+nav .nav-item .clickable-zone {
+  padding-left: 5px;
+}
+
+nav .nav-item .item-title {
+  padding-left: 5px;
+}
+
+nav .nav-item:hover{
+  transform: scale(1.1);
+}
+
+.contact-list {
+  width: $contact-list-width;
+  padding-right: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: right;
   align-items: center;
+}
+
+.contact-list .contact-item {
+  color: app.$secondary-color;
+}
+
+.contact-item a {
+  color: app.$secondary-color !important;
+  padding: 0 10px;
 }
 
 .category-btn{
@@ -88,24 +154,6 @@ header{
   cursor: pointer;
 }
 
-.frame-container{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-img-container{
-  height: 100%;
-  aspect-ratio: 1/1;
-  border: 5px solid app.$primary-color;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media screen and (max-width: 768px) {
   .profile-img-container{
     height: auto;
@@ -127,22 +175,24 @@ header{
   align-items: center;
 }
 
-.orange-line-container{
-  padding: 20px 0px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.projects-container {
+  margin-top: 50px;
 }
 
-.orange-line{
-  background-color: app.$primary-color;
-  height: 5px;
-  width: 90%;
-  border-radius: 20px;
+.project-card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-text-container {
+  padding-left: 10%;
+  width: 80%;
 }
 
 .project-description{
+  max-width: 400px;
   font-size: 16px;
   text-align: justify;
   color: app.$secondary-color;
@@ -153,14 +203,20 @@ header{
   font-size: 14px;
 }
 
-.techno-name{
-  font-size: 16px;
+.techno-tag {
+  
+}
+
+.techno-tag .techno-name{
+  font-size: 13px;
 }
 
 .carousel-box{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  max-width: 40%;
 }
 
 .mail-container{
@@ -263,3 +319,57 @@ header{
 .return-home:hover{
   background-color: app.$primary-color-hover;
 }
+
+article {
+  height: calc(100vh - $main-margin-top);
+  width: 100%;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-left-side {
+  display: flex;
+  padding-top: 10%;
+  height: 100%;
+  width: 40%;
+  flex-grow: 0;
+}
+
+.frame-container{
+  max-height: 300px;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img-container{
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: 3px solid app.$primary-color;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  text-align: right;
+  padding-top: 10%;
+  padding-right: 20px;
+  flex-grow: 1;
+}
+
+.thanks-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 10%;
+}
+

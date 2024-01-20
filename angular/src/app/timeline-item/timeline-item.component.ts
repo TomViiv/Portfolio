@@ -9,6 +9,7 @@ export class TimelineItemComponent implements OnInit {
   @Input() lastItem: boolean = false;
   @Input() title: string = "";
   @Input() date: string = "";
+  @Input() hasBg: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

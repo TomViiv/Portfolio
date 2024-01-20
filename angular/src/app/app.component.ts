@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { NgFor, ViewportScroller } from '@angular/common';
 import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { faDiagramProject, faEnvelope, faHouse, faPalette } from '@fortawesome/free-solid-svg-icons';
+import { faDiagramProject, faEnvelope, faHouse, faPalette, faAddressCard, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { hobbies } from './model/datas/hobbies';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,10 @@ export class AppComponent {
   faDiagramProject = faDiagramProject;
   faEnvelope = faEnvelope;
   faPalette = faPalette;
+  faAdressCard = faAddressCard;
+  faLinkedin = faLinkedin;
+  faGitHub = faGithub;
+  faFileDL = faArrowDown;
 
   hobbies = hobbies;
 

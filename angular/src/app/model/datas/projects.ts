@@ -2,21 +2,20 @@ import { Project } from '../class/project';
 
 export const myProjects: Project[] = [
   new Project(
-    'Portfolio',
+    'Bureau de rêves',
     'Juin 2023',
-    "J'ai développé ce portfolio avec le framework Angular. J'aimerai implémenter mon \"Bureau de rêve\" en 3D à l'aide de la librairie ThreeJS. Cela me permettrai de mettre à profit les compétences développées grâce à un MOOC Blender effectué en mars 2023.",
+    "Suite à un MOOC Blender effectué en Mars 2023, j'ai modéliser mon \"Bureau de rêve\" en 3D sur Blender. L'objectif suivant est de l'intégrer à ce portfolio à l'aide de la librarie ThreeJs.",
     [
       { name: 'Blender', logoUrl: '' },
-      { name: 'ThreeJS', logoUrl: '' },
     ],
     [
-      {type: "img", name:"Bureau de rêve", url: "/assets/Projects/bureau.png"}
+      {type: "img", name:"Bureau de rêve", url: "/assets/Projects/dream_desk.png"}
     ]
   ),
   new Project('KUHN AURA Live', "2021 - Aujourd'hui", "Actuellement, je suis en alternance en tant qu'ingénieur Full-Stack au sein de l'équipe robotique de l'entreprise KUHN Audureau. J'ai en charge de la réalisation de l'application KUHN AURA Live. Je réalise les maquettes de vues et je les implémente. Je m'occupe aussi de la partie BackEnd. KUHN AURA Live est une application Angular destinée à être l'Interface Homme Machine principale de l'innovant robot KUHN AURA.",
     [
-      { name: 'FrontEnd : Angular', logoUrl: '' },
-      { name: 'BackEnd : .NET', logoUrl: '' },
+      { name: 'Angular (HTML, CSS, JS, TS)', logoUrl: '' },
+      { name: '.NET (C#)', logoUrl: '' },
     ],
     [
       {

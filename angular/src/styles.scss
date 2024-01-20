@@ -3,34 +3,55 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
-$primary-color: #FF8872;
-$primary-color-hover: #E57B67;
-$secondary-color: #2D4767;
-$light-grey: #F4F3F3;
+$orange: #FF8872;
+$orange-hover: #E57B67;
+$darkblue: #2D4767;
+$lightgrey: #F4F3F3;
+$lightorange:  #F8C2B8;
 $white: #FFFFFF;
 
+$header-height: 50px;
+
+$primary-color: $orange;
+$primary-color-hover: $orange-hover;
+$secondary-color: $darkblue;
+$primary-font: Lato;
+$secondary-font: Arvo;
+
 h1{
-  //font-family: 'Arvo';
+  padding-left: 10px;
+  font-family: $secondary-font;
   color: $primary-color;
-  font-weight: bold;
-  font-size: 50px;
+  font-weight: 700;
 }
 
 h2{
+  padding-left: 10px;
   color: $secondary-color;
-}
-
-h3{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  color: $secondary-color;
-  padding-bottom: 25px;
+  font-family: $primary-font;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal; 
+  margin: 0;
   text-transform: uppercase;
 }
 
+h3{
+  padding-left: 10px;
+  color: $primary-color;
+  font-family: $secondary-font;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
 h4{
-  font-size: 40px;
+  font-family: $primary-font;
+  font-size: 24px;
+  text-transform: uppercase;
   color: $secondary-color;
 }
 
@@ -42,6 +63,11 @@ h4{
 }
 
 span{
+  font-family: $primary-font;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal; 
   color: $secondary-color;
 }
 
@@ -59,4 +85,8 @@ p{
   margin: 0;
   padding: 0;
   padding-left: 5px;
+}
+
+.clickable {
+  cursor: pointer;
 }
