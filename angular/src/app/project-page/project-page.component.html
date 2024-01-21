@@ -1,0 +1,24 @@
+<ng-container *ngIf="(projectService.selectedProject$) | async as project">
+    <div class="project-card">
+        <div class="carousel-box">
+            <app-carousel [images]="project.images"></app-carousel>
+        </div>
+        <div class="project-text-container">
+            <h4>{{ project.name }}</h4>
+            <div class="project-description">{{ project.description }}</div>
+            <ng-container *ngIf="project.technos.length > 0">
+                <div class="technos-container">
+                    <ul>
+                        <ng-container *ngFor="let techno of project.technos">
+
+                            <li class="techno-tag">
+                                <span class="techno-name">{{ techno.name }}</span>
+                            </li>
+                        </ng-container>
+                    </ul>
+                    
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>

@@ -1,12 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
-import { myProjects } from './model/datas/projects';
-import { Router } from '@angular/router';
-import { NgFor, ViewportScroller } from '@angular/common';
-import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
-import { faDiagramProject, faEnvelope, faHouse, faPalette, faAddressCard, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { faDiagramProject, faEnvelope, faHouse, faPalette, faAddressCard, faFileArrowDown, faCopy as fasCopy } from '@fortawesome/free-solid-svg-icons';
 import { hobbies } from './model/datas/hobbies';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faCopy as farCopy } from '@fortawesome/free-regular-svg-icons';
+import { UtilsService } from './services/utils.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +15,9 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 export class AppComponent {
   title = 'portfolio';
 
-  projects = myProjects;
-
   faHouse = faHouse;
 
-  langage : 'fr' | 'en' = 'fr'; //TODO faire avec babel ?
+  langage : 'fr' | 'en' = 'fr'; //@TODO faire avec babel ?
 
   faDiagramProject = faDiagramProject;
   faEnvelope = faEnvelope;
@@ -28,42 +25,29 @@ export class AppComponent {
   faAdressCard = faAddressCard;
   faLinkedin = faLinkedin;
   faGitHub = faGithub;
-  faFileDL = faArrowDown;
+  faFileDL = faFileArrowDown;
+  farCopy = farCopy;
+  fasCopy = fasCopy;
 
   hobbies = hobbies;
 
-  constructor(private scroller: ViewportScroller){
+  constructor(private router: Router, private scroller: ViewportScroller, public utils:UtilsService){
 
   }
 
   goTo(id: string) : void {
-    this.scroller.scrollToAnchor(id);
-  }
-
-  getResumeUrl() : string {
-    if(this.langage == 'fr'){
-      return '/assets/Vivier_Thomas_CV.pdf'
+    if(this.router.url != ""){
+      this.returnHome();
+      let that = this;
+      setTimeout(() => {
+        that.scroller.scrollToAnchor(id);
+      }, 10);
     } else {
-      return ''; //TODO version anglaise du CV
+      this.scroller.scrollToAnchor(id);
     }
   }
 
-  getResumeFilename() : string {
-    if(this.langage == 'fr'){
-      return 'Vivier_Thomas_CV.pdf'
-    } else {
-      return ''; //TODO version anglaise du CV
-    }
+  returnHome() : void {
+    this.router.navigate(['']);
   }
-
-  copyMail() : void {
-    try {
-      navigator.clipboard.writeText("thomas.vivier99@gmail.com");
-      confirm("Adresse mail copiée :)");
-    } catch (err) {
-      console.error(err.name, err.message);
-    }
-  }
-
-
 }

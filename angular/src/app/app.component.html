@@ -40,7 +40,7 @@
         </a>
       </div>
       <div class="contact-item">
-        <a class="clickable clickable-zone" (click)="copyMail()">
+        <a class="clickable clickable-zone" (click)="utils.copyMail()">
           <fa-icon [icon]="faEnvelope" [size]="'lg'"></fa-icon>
         </a>
       </div>
@@ -51,88 +51,10 @@
   </div>
 </header>
 <main>
-  <article class="about-container">
-    <div class="about-left-side">
-      <div class="frame-container">
-        <div class="profile-img-container">
-          <img class="profile-img" src="/assets/portrait.png" />
-        </div>
-      </div>
-    </div>
-    <div class="about-right-side">
-      <h1>Thomas Vivier</h1>
-      <h2>Ingénieur Full Stack</h2>
-      <div class="download-btn-container">
-        <fa-icon [icon]="faFileDL" [size]="'1x'"></fa-icon>
-        <a [href]="getResumeUrl()" [download]="getResumeFilename()" class="btn primary-btn" role="button"
-          aria-pressed="true">Télécharger mon CV</a>
-      </div>
-    </div>
-  </article>
-  <div class="projects-container" id="projects">
-    <!--<h3>Projets</h3>-->
-    <ng-container *ngFor="let project of projects; let i = index">
-      <!--<div>-->
-      <timeline-item [date]="project.date" [hasBg]="i%2==0">
-        <div class="project-card">
-          <div class="carousel-box">
-            <app-carousel [images]="project.images"></app-carousel>
-          </div>
-          <div class="project-text-container">
-            <h4>{{ project.name }}</h4>
-            <div class="project-description">{{ project.description }}</div>
-            <ng-container *ngIf="project.technos.length > 0">
-              <div class="technos-container">
-                <ng-container *ngFor="let techno of project.technos">
-                  <!--<div class="techno-logo-container">
-                        <img [src]="techno.logoUrl" />
-                      </div>-->
-                  <div class="techno-tag">
-                    <span class="techno-name">{{ techno.name }}</span>
-                  </div>
-                </ng-container>
-              </div>
-            </ng-container>
-          </div>
-        </div>
-      </timeline-item>
-      <!--</div>-->
-    </ng-container>
-  </div>
-  <!--<article class="hobbies-container" id="hobbies">
-    <h3>Loisirs</h3>
-    <div class="hobbies-table">
-      <ng-container *ngFor="let hobby of hobbies">
-        <div class="hobby-card-container">
-          <div class="hobby-card" [ngStyle]="{ 'background-image': 'url(' + hobby.imgUrl + ')' }">
-            <div class="hobby-content">
-              <div class="hobby-title">
-                <div class="hobby-icon">
-                  <fa-icon [icon]="hobby.faIcon" [size]="'2x'"></fa-icon>
-                </div>
-                <div class="hobby-name">{{ hobby.name }}</div>
-              </div>
-              <div class="hobby-description">{{ hobby.description }}</div>
-            </div>
-          </div>
-        </div>
-      </ng-container>
-    </div>
-  </article>-->
-  <article class="thanks-container" id="contact">
-    <h4>Merci pour votre visite</h4>
-    <!--<div class="mail-container">
-      <div class="mail" (click)="copyMail()">
-        <a class="btn primary-btn" role="button" aria-pressed="true">
-          <fa-icon [icon]="faEnvelope"></fa-icon>
-          <p>thomas.vivier99@gmail.com</p>
-        </a>
-      </div>
-    </div>-->
-  </article>
+  <router-outlet></router-outlet>
 </main>
 <footer></footer>
 
-<a class="return-home" href="#">
+<div class="return-home" (click)="goTo('about')">
   <fa-icon [icon]="faHouse"></fa-icon>
-</a>
+</div>

@@ -1,18 +1,11 @@
 <div class="timeline-container">
   <div class="date-container">
-    <span class="date">{{date}}</span>
+    <span class="date">{{project.date}}</span>
   </div>
   <div class="timeline-item">
     <div class="timeline-item-graph"></div>
-    <div class="timeline-item-description" [ngClass]="hasBg ? 'description-bg' : ''">
-      <!--<div>
-        <h4></h4>
-      </div>-->
-        <span class="timeline-item-title">
-            <!--<ng-content #icon></ng-content>
-            {{title || "sans-titre"}}-->
-        </span>
-        <ng-content></ng-content>
+    <div class="timeline-item-description" [ngClass]="hasBg ? 'description-bg' : ''" routerLink="/project" (click)="projectService.selectProject(project)">
+      {{project.name}}
     </div>
   </div>
 </div>

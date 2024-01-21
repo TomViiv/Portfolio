@@ -1,0 +1,97 @@
+@use '/src/styles.scss' as app;
+
+article {
+    height: calc(100vh - app.$main-margin-top);
+    width: 100%;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-left-side {
+    display: flex;
+    padding-top: 10%;
+    height: 100%;
+    width: 40%;
+    flex-grow: 0;
+}
+
+.frame-container {
+    max-height: 300px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img-container {
+    aspect-ratio: 1/1;
+    border: 3px solid app.$primary-color;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: right;
+    padding-top: 10%;
+    padding-right: 20px;
+    flex-grow: 1;
+}
+
+.thanks-container {
+    height: 100%;
+    width: 100%;
+    padding-top: 10%;
+}
+
+.about-btn-list {
+    padding-top: 5%;
+    padding-bottom: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    //justify-content: space-around;
+    align-items: center;
+}
+
+.about-btn-list a {
+    color: app.$primary-color;
+}
+
+.about-btn-list .about-btn {
+    padding-left: 10%;
+}
+
+.projects-container {
+    padding-top: 50px;
+}
+
+.project-title {
+    padding-top: 20px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: app.$primary-color;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-img-container {
+        height: auto;
+        width: 100%;
+    }
+}
+
+.profile-img {
+    max-height: 100%;
+    max-width: 100%;
+    clip-path: ellipse(50% 50%);
+}

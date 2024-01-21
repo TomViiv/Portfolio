@@ -73,17 +73,18 @@ $bottom-space: 25px;
     color: app.$primary-color;
     margin-left: 10px;
     padding: 3% 5%;
+    font-family: app.$primary-font;
+    font-size: 18px;
+    color: app.$secondary-color;
+    cursor: pointer;
+}
+
+.timeline-item-description:hover{
+    font-weight: 700;
 }
 
 .description-bg {
     background-color: app.$lightgrey;
-}
-
-
-.timeline-item-title {
-    font-weight: 600;
-    font-size: 14px;
-    color: app.$secondary-color;
 }
 
 .timeline-icon {

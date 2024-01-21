@@ -13,7 +13,7 @@
     >
       <ng-template ngbSlide *ngFor="let img of images; index as i">
         <div class="carousel-caption">
-          <h3 class="caption">{{ img.name }}</h3>
+          <span class="caption">{{ img.name }}</span>
         </div>
         <div class="picsum-img-wrapper img-container">
           <ng-container *ngIf="img.type == 'video'">

@@ -11,6 +11,7 @@ $lightorange:  #F8C2B8;
 $white: #FFFFFF;
 
 $header-height: 50px;
+$main-margin-top: 50px;
 
 $primary-color: $orange;
 $primary-color-hover: $orange-hover;
@@ -51,8 +52,8 @@ h3{
 h4{
   font-family: $primary-font;
   font-size: 24px;
-  text-transform: uppercase;
   color: $secondary-color;
+  text-transform: uppercase;
 }
 
 .content-centered{
@@ -72,13 +73,27 @@ span{
 }
 
 .primary-btn{
-  color: $white;
+  color: $white !important;
   background-color: $primary-color;
+  cursor: pointer;
 }
 
-.primary-btn:hover{
+.primary-btn:hover {
   background-color: $primary-color-hover;
   color: $white;
+}
+
+.primary-btn-outline {
+  color: $primary-color;
+  background-color: $white;
+  border: 1px solid $primary-color;
+  cursor: pointer;
+}
+
+.primary-btn-outline:hover {
+  color: $primary-color;
+  background-color: $white;
+  border: 1px solid $primary-color;
 }
 
 p{
@@ -89,4 +104,25 @@ p{
 
 .clickable {
   cursor: pointer;
+}
+
+.left-icon {
+  padding-right: 5px;
+}
+
+.right-icon {
+  padding-left: 5px;
+}
+
+.grow-item {
+  height: auto;
+  width: auto;
+}
+
+.grow-item:hover {
+  transform: scale(1.2);
+}
+
+.text-as-code {
+  font-family: 'Courier New', Courier, monospace;
 }

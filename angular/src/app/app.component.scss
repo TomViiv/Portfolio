@@ -4,7 +4,6 @@ $logo-size: 24px;
 $contact-list-width: 100px;
 $orange-line-height: 2px;
 $orange-line-margin: 50px;
-$main-margin-top: 50px;
 
 .custom-navbar{
   padding: 20px 20px;
@@ -43,7 +42,7 @@ header{
 }
 
 main {
-  margin-top: $main-margin-top;
+  margin-top: app.$main-margin-top;
   height: calc(100vh - app.$header-height);
   width: 100%;
   padding: 0 10% 0 10%;
@@ -154,19 +153,6 @@ nav .nav-item:hover{
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .profile-img-container{
-    height: auto;
-    width: 100%;
-  }
-}
-
-.profile-img{
-  max-height: 100%;
-  max-width: 100%;
-  clip-path:ellipse(50% 50%);
-}
-
 .download-btn-container{
   height: 100%;
   width: 100%;
@@ -175,48 +161,8 @@ nav .nav-item:hover{
   align-items: center;
 }
 
-.projects-container {
-  margin-top: 50px;
-}
-
-.project-card {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-.project-text-container {
-  padding-left: 10%;
-  width: 80%;
-}
-
-.project-description{
-  max-width: 400px;
-  font-size: 16px;
-  text-align: justify;
-  color: app.$secondary-color;
-  padding-bottom: 10px;
-}
-
 .font-size-14{
   font-size: 14px;
-}
-
-.techno-tag {
-  
-}
-
-.techno-tag .techno-name{
-  font-size: 13px;
-}
-
-.carousel-box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 40%;
 }
 
 .mail-container{
@@ -258,8 +204,6 @@ nav .nav-item:hover{
   padding: 10px;
   transform: scale(0.8);
 }
-
-
 
 .hobby-card:hover{
   transform: scale(1);
@@ -314,62 +258,10 @@ nav .nav-item:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .return-home:hover{
   background-color: app.$primary-color-hover;
-}
-
-article {
-  height: calc(100vh - $main-margin-top);
-  width: 100%;
-}
-
-.about-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.about-left-side {
-  display: flex;
-  padding-top: 10%;
-  height: 100%;
-  width: 40%;
-  flex-grow: 0;
-}
-
-.frame-container{
-  max-height: 300px;
-  max-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-img-container{
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 1/1;
-  border: 3px solid app.$primary-color;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-right-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  text-align: right;
-  padding-top: 10%;
-  padding-right: 20px;
-  flex-grow: 1;
-}
-
-.thanks-container {
-  height: 100%;
-  width: 100%;
-  padding-top: 10%;
 }
 

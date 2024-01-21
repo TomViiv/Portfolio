@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Project } from '../model/class/project';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'timeline-item',
@@ -7,10 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TimelineItemComponent implements OnInit {
   @Input() lastItem: boolean = false;
-  @Input() title: string = "";
-  @Input() date: string = "";
   @Input() hasBg: boolean = false;
-  constructor() { }
+  @Input() project: Project;
+  constructor(public projectService: ProjectService) { }
 
   ngOnInit(): void {
   }
